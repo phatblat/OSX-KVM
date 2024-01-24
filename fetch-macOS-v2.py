@@ -147,7 +147,7 @@ def get_session(args):
         'User-Agent': 'InternetRecovery/1.0',
     }
 
-    headers, _ = run_query('http://osrecovery.apple.com/', headers)
+    headers, _ = run_query('https://osrecovery.apple.com/', headers)
 
     if args.verbose:
         print('Session headers:')
@@ -181,9 +181,9 @@ def get_image_info(session, bid, mlb=MLB_ZERO, diag=False, os_type='default', ci
     }
 
     if diag:
-        url = 'http://osrecovery.apple.com/InstallationPayload/Diagnostics'
+        url = 'https://osrecovery.apple.com/InstallationPayload/Diagnostics'
     else:
-        url = 'http://osrecovery.apple.com/InstallationPayload/RecoveryImage'
+        url = 'https://osrecovery.apple.com/InstallationPayload/RecoveryImage'
         post['os'] = os_type
 
     headers, output = run_query(url, headers, post)
